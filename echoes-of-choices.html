@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Choices - Silvia</title>
+    <style>
+        @font-face {
+            font-family: 'Lora';
+            src: url('Lora-VariableFont_wght.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: #e0f7fa;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            padding: 10px 0;
+        }
+        .container {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+        .content-block {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .content-block img, .content-block video {
+            width: 80%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .content-block img:hover, .content-block video:hover {
+            transform: scale(1.05);
+        }
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+        }
+        .fullscreen img, .fullscreen video {
+            width: 90%;
+            height: auto;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+        .return-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .return-link a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #000;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        .return-link a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .game-link {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        .game-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .game-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Echoes of Choices</h1>
+    <div class="container">
+        <div class="content-block">
+            <img src="9-project 3-Game Design.png" alt="Game Design" onclick="openFullscreen(this)">
+            <img src="10-project 3-Game visuals.png" alt="Game Visuals" onclick="openFullscreen(this)">
+            <video src="11-project 3-Game Screen Recoring.MOV" controls onclick="openFullscreen(this)"></video>
+            <div class="game-link">
+                Link to game: <a href="https://zhany842.itch.io/echoes-of-choices" target="_blank">https://zhany842.itch.io/echoes-of-choices</a>
+            </div>
+        </div>
+        <div class="return-link">
+            <a href="works.html">Return to Works</a>
+        </div>
+    </div>
+    <div id="fullscreen" class="fullscreen" style="display: none;">
+        <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+        <div id="fullscreen-content"></div>
+    </div>
+
+    <script>
+        function openFullscreen(element) {
+            const fullscreen = document.getElementById('fullscreen');
+            const content = document.getElementById('fullscreen-content');
+            const clone = element.cloneNode(true);
+            clone.controls = true;
+            content.innerHTML = '';
+            content.appendChild(clone);
+            fullscreen.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreen').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

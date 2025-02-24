@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works - Silvia</title>
+    <style>
+        @font-face {
+            font-family: 'Lora';
+            src: url('Lora-VariableFont_wght.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: #dce4eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .works-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 60%;
+        }
+        .work-button, .home-button {
+            padding: 20px;
+            border: 2px solid #000;
+            text-decoration: none;
+            color: #000;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        .work-button:hover, .home-button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .home-button {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Works</h1>
+    <div class="works-container">
+        <a href="cycle.html" class="work-button">Cycle</a>
+        <a href="viscous.html" class="work-button">Viscous</a>
+        <a href="echoes-of-choices.html" class="work-button">Echoes of Choices</a>
+        <a href="hard-to-tell.html" class="work-button">Hard to Tell</a>
+    </div>
+    <a href="index.html" class="home-button">Return to Home</a>
+</body>
+</html>
